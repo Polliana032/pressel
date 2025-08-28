@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Redirecionando...</title>
+  <style>
+    body {
+      background-color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .loading {
+      animation: rotate 1s linear infinite;
+      border: 5px solid #F3F3F3;
+      border-top: 5px solid #3498DB;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      margin: 20px auto;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 24px;
+    }
+  </style>
+  <script>
+    // Função para redirecionar para um grupo de WhatsApp aleatório
+    function redirecionar() {
+      var grupos = [
+	    'https://wa.me/5521959413120?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 1
+        'https://wa.me/5521959474289?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 2
+        'https://wa.me/5521959431470?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 3
+        'https://wa.me/5521959514185?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 4
+		'https://wa.me/5521959432314?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 42
+		'https://wa.me/5521959431617?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 5
+        'https://wa.me/5521959432850?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 6
+        'https://wa.me/5521959475409?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 7
+        'https://wa.me/5521959514331?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 8
+		'https://wa.me/5521959432906?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 82
+        'https://wa.me/5521959432155?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 9
+		'https://wa.me/5521959475471?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 11
+		'https://wa.me/5521959432402?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 12
+		'https://wa.me/5521959432480?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 13
+		'https://wa.me/5521959358512?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 14
+		'https://wa.me/5521959432807?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 15
+		'https://wa.me/5521959357855?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 16
+		'https://wa.me/5521959515859?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 17
+		'https://wa.me/5521959515943?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 18
+		'https://wa.me/5521959516436?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 19
+		'https://wa.me/5521959432953?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 192
+		'https://wa.me/5521959433069?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 20
+		'https://wa.me/5521959474484?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 21
+        'https://wa.me/5521959416090?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 22
+		'https://wa.me/5521987164934?text=Oi%2C%20quero%20ver%20seus%20conteudos', // Grupo 23
+		'https://wa.me/5521959432639?text=Oi%2C%20quero%20ver%20seus%20conteudos' // Grupo 232
+      ];
+      var grupoAleatorio = grupos[Math.floor(Math.random() * grupos.length)];
+      window.location.href = grupoAleatorio;
+    }
+    // Função para enviar o evento de PageView para o Facebook
+    function enviarPixel() {
+      fbq('track', 'PageView');
+    }
+  </script>
+  <!-- Pixel do Facebook -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '627501726650894');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body onload="setTimeout(redirecionar, 3000); enviarPixel();">
+  <div class="loading"></div>
+  <h1>Aguarde alguns segundos, vou liberar o que prometi para você...</h1>
+</body>
+</html>
